@@ -11,9 +11,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        RestaurantListService().retriveListRestaurant { result in
+            switch result {
+            case .success(let response):
+                print(response)
+                break
+            case .failure:
+                break
+            }
+        }
     }
-
-
 }
 

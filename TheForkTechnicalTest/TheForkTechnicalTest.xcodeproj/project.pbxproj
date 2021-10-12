@@ -13,6 +13,12 @@
 		927859602716173F0017BD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9278595E2716173F0017BD5C /* LaunchScreen.storyboard */; };
 		9278596B2716173F0017BD5C /* TheForkTechnicalTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278596A2716173F0017BD5C /* TheForkTechnicalTestTests.swift */; };
 		927859762716173F0017BD5C /* TheForkTechnicalTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859752716173F0017BD5C /* TheForkTechnicalTestUITests.swift */; };
+		9278599F271619990017BD5C /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9278599E271619990017BD5C /* BaseRequest.swift */; };
+		927859A4271619DC0017BD5C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859A3271619DC0017BD5C /* StringExtension.swift */; };
+		927859A927161A080017BD5C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 927859A827161A080017BD5C /* Localizable.strings */; };
+		927859CD27161B2A0017BD5C /* RestaurantListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859CC27161B2A0017BD5C /* RestaurantListService.swift */; };
+		927859D227161BE20017BD5C /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859D127161BE20017BD5C /* Restaurant.swift */; };
+		927859D7271620540017BD5C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859D6271620540017BD5C /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		927859712716173F0017BD5C /* TheForkTechnicalTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheForkTechnicalTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		927859752716173F0017BD5C /* TheForkTechnicalTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheForkTechnicalTestUITests.swift; sourceTree = "<group>"; };
 		927859772716173F0017BD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9278599E271619990017BD5C /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		927859A3271619DC0017BD5C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		927859A827161A080017BD5C /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		927859CC27161B2A0017BD5C /* RestaurantListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListService.swift; sourceTree = "<group>"; };
+		927859D127161BE20017BD5C /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		927859D6271620540017BD5C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,7 @@
 				9278595C2716173F0017BD5C /* Assets.xcassets */,
 				9278595E2716173F0017BD5C /* LaunchScreen.storyboard */,
 				927859612716173F0017BD5C /* Info.plist */,
+				927859A827161A080017BD5C /* Localizable.strings */,
 			);
 			path = TheForkTechnicalTest;
 			sourceTree = "<group>";
@@ -155,6 +168,7 @@
 		92785995271618710017BD5C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				927859D127161BE20017BD5C /* Restaurant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,6 +183,8 @@
 		92785997271618820017BD5C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9278599E271619990017BD5C /* BaseRequest.swift */,
+				927859CC27161B2A0017BD5C /* RestaurantListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -176,6 +192,7 @@
 		92785998271618900017BD5C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				927859A3271619DC0017BD5C /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -190,6 +207,7 @@
 		9278599A271618A90017BD5C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				927859D6271620540017BD5C /* Environment.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -298,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927859602716173F0017BD5C /* LaunchScreen.storyboard in Resources */,
+				927859A927161A080017BD5C /* Localizable.strings in Resources */,
 				9278595D2716173F0017BD5C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,8 +342,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927859A4271619DC0017BD5C /* StringExtension.swift in Sources */,
 				92785958271617370017BD5C /* ViewController.swift in Sources */,
+				927859D227161BE20017BD5C /* Restaurant.swift in Sources */,
+				927859D7271620540017BD5C /* Environment.swift in Sources */,
+				927859CD27161B2A0017BD5C /* RestaurantListService.swift in Sources */,
 				92785954271617370017BD5C /* AppDelegate.swift in Sources */,
+				9278599F271619990017BD5C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -436,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BASE_URL = "";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -492,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://alanflament.github.io/TFTest/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2G7683R3B9;
 				INFOPLIST_FILE = TheForkTechnicalTest/Info.plist;
@@ -512,6 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://alanflament.github.io/TFTest/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2G7683R3B9;
 				INFOPLIST_FILE = TheForkTechnicalTest/Info.plist;
