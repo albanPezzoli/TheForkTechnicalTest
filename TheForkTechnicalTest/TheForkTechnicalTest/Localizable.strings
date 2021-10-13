@@ -9,3 +9,5 @@
 "errorTitle" = "Erreur Technique";
 "errorMessage" = "Une erreur est survenue";
 "errorFormatedURL" = "Erreur sur le format de l'url";
+
+"ListViewControllerTitle" = "Liste des restaurants";
