@@ -114,6 +114,8 @@ extension ListViewController: RestaurantServiceDelegate {
     }
     
     func retrieveRestaurantDidFailed(error: Error) {
-        print("error")
+        Thread.onMainThread {
+            self.presentPopupError(title: "errorTitle".localized, message: error.localizedDescription)
+        }
     }
 }

@@ -25,6 +25,7 @@
 		927859F127173C590017BD5C /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859F027173C590017BD5C /* RestaurantCell.swift */; };
 		927859F627173EDC0017BD5C /* RestaurantServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859F527173EDC0017BD5C /* RestaurantServiceDelegate.swift */; };
 		927859FB271740D40017BD5C /* ThreadExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859FA271740D40017BD5C /* ThreadExtension.swift */; };
+		92785A00271748C80017BD5C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859FF271748C80017BD5C /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		927859F027173C590017BD5C /* RestaurantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCell.swift; sourceTree = "<group>"; };
 		927859F527173EDC0017BD5C /* RestaurantServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantServiceDelegate.swift; sourceTree = "<group>"; };
 		927859FA271740D40017BD5C /* ThreadExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadExtension.swift; sourceTree = "<group>"; };
+		927859FF271748C80017BD5C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				927859A3271619DC0017BD5C /* StringExtension.swift */,
 				927859FA271740D40017BD5C /* ThreadExtension.swift */,
+				927859FF271748C80017BD5C /* UIViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				927859E62717378C0017BD5C /* RestaurantsViewModel.swift in Sources */,
 				927859F127173C590017BD5C /* RestaurantCell.swift in Sources */,
 				927859E1271737530017BD5C /* MainCoordinator.swift in Sources */,
+				92785A00271748C80017BD5C /* UIViewControllerExtension.swift in Sources */,
 				9278599F271619990017BD5C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
