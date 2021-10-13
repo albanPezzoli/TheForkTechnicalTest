@@ -8,6 +8,6 @@
 import Foundation
 
 protocol RestaurantServiceDelegate: AnyObject {
-    func retrieveRestaurantDidSuccess(restaurants: [Restaurant])
+    func retrieveRestaurantDidSuccess(restaurants: [RestaurantDTO])
     func retrieveRestaurantDidFailed(error: Error)
 }

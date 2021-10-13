@@ -29,6 +29,7 @@
 		92785A05271768330017BD5C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785A04271768330017BD5C /* ImageLoader.swift */; };
 		92785A0A271768740017BD5C /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785A09271768740017BD5C /* UIImageViewExtension.swift */; };
 		92785A0F271768C80017BD5C /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785A0E271768C80017BD5C /* OptionalExtension.swift */; };
+		92785A142717852D0017BD5C /* RestaurantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785A132717852D0017BD5C /* RestaurantDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		92785A04271768330017BD5C /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		92785A09271768740017BD5C /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		92785A0E271768C80017BD5C /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
+		92785A132717852D0017BD5C /* RestaurantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		927859962716187A0017BD5C /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				92785A132717852D0017BD5C /* RestaurantDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				927859F627173EDC0017BD5C /* RestaurantServiceDelegate.swift in Sources */,
 				927859E62717378C0017BD5C /* RestaurantsViewModel.swift in Sources */,
 				927859F127173C590017BD5C /* RestaurantCell.swift in Sources */,
+				92785A142717852D0017BD5C /* RestaurantDTO.swift in Sources */,
 				927859E1271737530017BD5C /* MainCoordinator.swift in Sources */,
 				92785A00271748C80017BD5C /* UIViewControllerExtension.swift in Sources */,
 				92785A0F271768C80017BD5C /* OptionalExtension.swift in Sources */,

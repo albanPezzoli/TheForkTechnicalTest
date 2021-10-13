@@ -11,7 +11,7 @@ final class RestaurantsViewModel {
     // Instanciate in the init, can be force unwrapped
     private let restaurantListService: RestaurantListService!
     private var restaurantResult: Result<ListRestaurant, Error>?
-    private var restaurant: [Restaurant] = []
+    private var restaurant: [RestaurantDTO] = []
     
     weak var delegate: RestaurantServiceDelegate?
     
@@ -26,8 +26,8 @@ final class RestaurantsViewModel {
         guard let restaurantResult = restaurantResult else { return }
         switch restaurantResult {
         case .success(let response):
-            self.restaurant = response.data
-            delegate?.retrieveRestaurantDidSuccess(restaurants: response.data)
+            self.restaurant = response.data.map { RestaurantDTO(restaurant: $0)}
+            delegate?.retrieveRestaurantDidSuccess(restaurants: self.restaurant)
         case .failure(let error):
             delegate?.retrieveRestaurantDidFailed(error: error)
         }

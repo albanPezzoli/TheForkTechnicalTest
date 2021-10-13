@@ -83,9 +83,9 @@ final class RestaurantCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupCell(restaurant: Restaurant) {
+    public func setupCell(restaurant: RestaurantDTO) {
         restaurantNameLabel.text = restaurant.name
-        restaurantImageView.downloadImage(from: (restaurant.mainPhoto?.source).orEmpty)
-        theForkRatingLabel.text = "\(restaurant.aggregateRatings.thefork.ratingValue)"
+        restaurantImageView.downloadImage(from: restaurant.mainImageUrl.orEmpty)
+        theForkRatingLabel.text = restaurant.theForkRating
     }
 }
