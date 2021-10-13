@@ -96,7 +96,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListViewController.restaurantCellID, for: indexPath) as? RestaurantCell {
-            cell.backgroundColor = .brown
+            cell.setupCell(restaurant: self.restaurants[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
