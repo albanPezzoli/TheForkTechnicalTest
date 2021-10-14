@@ -8,7 +8,7 @@
 import UIKit
 
 final class ListViewController: UIViewController {
-    /* UI Components */
+    // MARK: UIComponents
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
@@ -23,22 +23,23 @@ final class ListViewController: UIViewController {
     
     private let activityIndicator = UIActivityIndicatorView(style: .gray)
     
-    /* Variables */
+    // MARK: Variables
     private var restaurants: [RestaurantDTO] = []
     private var restaurantsViewModel: RestaurantsViewModel!
     weak var coordinator: MainCoordinator?
     
     private static let restaurantCellID = "RestaurantCellID"
     
-    /* Functions */
+    // MARK: Functions
     init(restaurantsViewModel: RestaurantsViewModel) {
         self.restaurantsViewModel = restaurantsViewModel
 
         super.init(nibName: nil, bundle: nil)
     }
     
+    ///Will never be used
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -112,6 +113,7 @@ final class ListViewController: UIViewController {
     }
 }
 
+// MARK: UICollectionViewDelegate, UICollectionViewDataSource
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return restaurants.count
@@ -126,6 +128,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
+// MARK: RestaurantServiceDelegate
 extension ListViewController: RestaurantServiceDelegate {
     func retrieveRestaurantDidSuccess(restaurants: [RestaurantDTO]) {
         Thread.onMainThread {

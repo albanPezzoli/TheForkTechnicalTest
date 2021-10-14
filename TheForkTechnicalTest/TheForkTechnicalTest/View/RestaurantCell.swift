@@ -8,7 +8,7 @@
 import UIKit
 
 final class RestaurantCell: UICollectionViewCell {
-    
+    // MARK: UIComponents
     private let restaurantNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -89,8 +89,10 @@ final class RestaurantCell: UICollectionViewCell {
         return label
     }()
     
+    // MARK: Variables
     private var restaurant: RestaurantDTO?
     
+    // MARK: Functions
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -109,6 +111,7 @@ final class RestaurantCell: UICollectionViewCell {
         favoriteImageView.addGestureRecognizer(tapFavorite)
     }
     
+    ///Will never be used
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -153,6 +156,7 @@ final class RestaurantCell: UICollectionViewCell {
         theForkRatingLabel.leadingAnchor.constraint(equalTo: theForkRatingImageView.trailingAnchor, constant: 5).isActive = true
         theForkRatingLabel.centerYAnchor.constraint(equalTo: theForkRatingImageView.centerYAnchor).isActive = true
         
+        // Constraint the fork review
         theForkReviewNumbersLabel.centerYAnchor.constraint(equalTo: theForkRatingLabel.centerYAnchor).isActive = true
         theForkReviewNumbersLabel.leadingAnchor.constraint(equalTo: theForkRatingLabel.trailingAnchor, constant: 5).isActive = true
         theForkReviewNumbersLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
@@ -173,14 +177,6 @@ final class RestaurantCell: UICollectionViewCell {
         restaurantAddressLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
     }
     
-    @objc private func handleFavorite() {
-        if let restaurant = restaurant {
-            // Swap images
-            favoriteImageView.image = restaurant.isFavorite ? #imageLiteral(resourceName: "empty-heart") : #imageLiteral(resourceName: "filled-heart")
-            self.restaurant?.updateFavorite()
-        }
-    }
-    
     public func setupCell(restaurant: RestaurantDTO) {
         self.restaurant = restaurant
 
@@ -192,5 +188,14 @@ final class RestaurantCell: UICollectionViewCell {
         tripadvisorRankView.setRankValue(value: restaurant.tripadvisorRating)
         tripadvisorReviewNumbersLabel.text = "\(restaurant.tripadvisorReviewNumbers) reviews"
         theForkReviewNumbersLabel.text = "\(restaurant.theForkReviewNumbers) reviews"
+    }
+    
+    /* Actions */
+    @objc private func handleFavorite() {
+        if let restaurant = restaurant {
+            // Swap images
+            favoriteImageView.image = restaurant.isFavorite ? #imageLiteral(resourceName: "empty-heart") : #imageLiteral(resourceName: "filled-heart")
+            self.restaurant?.updateFavorite()
+        }
     }
 }

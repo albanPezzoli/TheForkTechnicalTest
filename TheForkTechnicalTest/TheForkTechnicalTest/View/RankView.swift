@@ -8,6 +8,7 @@
 import UIKit
 
 final class RankView: UIView {
+    // MARK: UIComponents
     private let rankImageView1: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +44,7 @@ final class RankView: UIView {
         return imageView
     }()
     
+    // MARK: Functions
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .clear
@@ -50,6 +52,7 @@ final class RankView: UIView {
         setupConstraints()
     }
     
+    ///Will never be used
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
