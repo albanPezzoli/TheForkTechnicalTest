@@ -47,12 +47,16 @@ final class ListViewController: UIViewController {
         self.title = "ListViewControllerTitle".localized
         self.view.backgroundColor = .lightGray
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sortActionButton".localized,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(showSortActionSheet))
+        
         setupActivityIndicator()
         setupCollectionView()
         
         restaurantsViewModel.delegate = self
-        
-        
+
         restaurantsViewModel!.retrieveRestaurant()
     }
     
@@ -63,6 +67,8 @@ final class ListViewController: UIViewController {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         activityIndicator.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        activityIndicator.hidesWhenStopped = true
 
         activityIndicator.startAnimating()
     }
@@ -87,6 +93,23 @@ final class ListViewController: UIViewController {
         
         collectionView.isHidden = true
     }
+    
+    /* Actions */
+    @objc private func showSortActionSheet() {
+        let alert = UIAlertController(title:nil , message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "sortByRankOption".localized, style: .default , handler:{ (UIAlertAction)in
+            self.restaurantsViewModel!.sortRestaurantByRank()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "sortByNameOption".localized, style: .default , handler:{ (UIAlertAction)in
+            self.restaurantsViewModel!.sortRestaurantByName()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "dismissOption".localized, style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -109,7 +132,7 @@ extension ListViewController: RestaurantServiceDelegate {
             self.restaurants = restaurants
             self.collectionView.reloadData()
             self.collectionView.isHidden = false
-            self.activityIndicator.removeFromSuperview()
+            self.activityIndicator.stopAnimating()
         }
     }
     

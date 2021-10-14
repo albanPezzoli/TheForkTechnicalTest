@@ -55,6 +55,12 @@ final class RestaurantCell: UICollectionViewCell {
         return label
     }()
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        restaurantImageView.image = nil
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

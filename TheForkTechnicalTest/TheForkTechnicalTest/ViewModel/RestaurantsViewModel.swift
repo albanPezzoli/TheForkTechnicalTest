@@ -32,4 +32,18 @@ final class RestaurantsViewModel {
             delegate?.retrieveRestaurantDidFailed(error: error)
         }
     }
+    
+    func sortRestaurantByName() {
+        let sortedArray = restaurant.sorted{ lhs, rhs -> Bool in
+            return lhs.name.caseInsensitiveCompare(rhs.name) == .orderedAscending
+        }
+        delegate?.retrieveRestaurantDidSuccess(restaurants: sortedArray)
+    }
+    
+    func sortRestaurantByRank() {
+        let sortedArray = restaurant.sorted { lhs, rhs -> Bool in
+            return lhs.theForkRating > rhs.theForkRating
+        }
+        delegate?.retrieveRestaurantDidSuccess(restaurants: sortedArray)
+    }
 }

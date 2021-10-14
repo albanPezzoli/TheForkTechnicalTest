@@ -11,3 +11,8 @@
 "errorFormatedURL" = "Erreur sur le format de l'url";
 
 "ListViewControllerTitle" = "Liste des restaurants";
+
+"sortActionButton" = "Trier";
+"sortByNameOption" = "Par nom";
+"sortByRankOption" = "Par note";
+"dismissOption" = "Annuler";
