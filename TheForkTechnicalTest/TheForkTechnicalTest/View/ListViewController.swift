@@ -11,7 +11,7 @@ final class ListViewController: UIViewController {
     /* UI Components */
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 130)
         layout.scrollDirection = .vertical
         
@@ -45,7 +45,7 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "ListViewControllerTitle".localized
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .lightGray
         
         setupActivityIndicator()
         setupCollectionView()

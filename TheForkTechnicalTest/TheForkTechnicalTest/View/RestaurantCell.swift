@@ -45,16 +45,28 @@ final class RestaurantCell: UICollectionViewCell {
         return label
     }()
     
+    private let restaurantAddressLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = .clear
+        self.layer.cornerRadius = 10
+        self.backgroundColor = .white
         
         // Add subviews
         self.addSubview(restaurantNameLabel)
         self.addSubview(restaurantImageView)
         self.addSubview(theForkRatingImageView)
         self.addSubview(theForkRatingLabel)
+        self.addSubview(restaurantAddressLabel)
         
         // Constraint restaurant Image
         restaurantImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
@@ -77,6 +89,12 @@ final class RestaurantCell: UICollectionViewCell {
         theForkRatingLabel.leadingAnchor.constraint(equalTo: theForkRatingImageView.trailingAnchor, constant: 5).isActive = true
         theForkRatingLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         theForkRatingLabel.centerYAnchor.constraint(equalTo: theForkRatingImageView.centerYAnchor).isActive = true
+        
+        // Constraint address label
+        restaurantAddressLabel.leadingAnchor.constraint(equalTo: restaurantImageView.trailingAnchor, constant: 20).isActive = true
+        restaurantAddressLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        restaurantAddressLabel.topAnchor.constraint(equalTo: theForkRatingImageView.bottomAnchor, constant: 10).isActive = true
+        restaurantAddressLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,5 +105,6 @@ final class RestaurantCell: UICollectionViewCell {
         restaurantNameLabel.text = restaurant.name
         restaurantImageView.downloadImage(from: restaurant.mainImageUrl.orEmpty)
         theForkRatingLabel.text = restaurant.theForkRating
+        restaurantAddressLabel.text = restaurant.address
     }
 }
