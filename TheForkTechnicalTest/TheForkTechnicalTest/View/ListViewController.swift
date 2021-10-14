@@ -131,6 +131,7 @@ extension ListViewController: RestaurantServiceDelegate {
         Thread.onMainThread {
             self.restaurants = restaurants
             self.collectionView.reloadData()
+            self.collectionView.setContentOffset(.zero, animated: false)
             self.collectionView.isHidden = false
             self.activityIndicator.stopAnimating()
         }
