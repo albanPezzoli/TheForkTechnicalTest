@@ -97,64 +97,23 @@ final class RankView: UIView {
         rankImageView5.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         rankImageView5.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         rankImageView5.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        
     }
     
     func setRankValue(value: Double) {
-        let index = Int(value.rounded(.down))
+        let rankImageViews = [rankImageView1, rankImageView2, rankImageView3, rankImageView4, rankImageView5]
+        let roundedDownValue = Int(value.rounded(.down))
         
-        if index == 0 {
-            rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-        } else if index == 1 {
-            rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-        } else if index == 2 {
-            rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-        } else if index == 3 {
-            rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-            rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-        } else if index == 4 {
-            rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-empty")
-        } else if index == 5 {
-            rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-full")
-            rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-full")
+        // Initialize all images to empty mark
+        rankImageViews.forEach({$0.image = #imageLiteral(resourceName: "ta-bubbles-empty")})
+
+        for index in 0..<roundedDownValue {
+            rankImageViews[index].image = #imageLiteral(resourceName: "ta-bubbles-full")
         }
         
-        
-        let decimal = value.truncatingRemainder(dividingBy: 1)
-        
-        if decimal != 0 {
-            if index == 0 {
-                rankImageView1.image = #imageLiteral(resourceName: "ta-bubbles-half")
-            } else if index == 1 {
-                rankImageView2.image = #imageLiteral(resourceName: "ta-bubbles-half")
-            } else if index == 2 {
-                rankImageView3.image = #imageLiteral(resourceName: "ta-bubbles-half")
-            } else if index == 3 {
-                rankImageView4.image = #imageLiteral(resourceName: "ta-bubbles-half")
-            } else if index == 4 {
-                rankImageView5.image = #imageLiteral(resourceName: "ta-bubbles-half")
-            }
+        if value.truncatingRemainder(dividingBy: 1) != 0 {
+            rankImageViews[roundedDownValue].image = #imageLiteral(resourceName: "ta-bubbles-half")
         }
     }
 }
