@@ -12,10 +12,10 @@ final class RestaurantCell: UICollectionViewCell {
     private let restaurantNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 15)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         return label
     }()
     
@@ -45,6 +45,16 @@ final class RestaurantCell: UICollectionViewCell {
         return label
     }()
     
+    private let theForkReviewNumbersLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
+    }()
+    
     private let restaurantAddressLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -61,6 +71,22 @@ final class RestaurantCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
         return imageView
+    }()
+    
+    private let tripadvisorRankView: RankView = {
+        let rankView = RankView()
+        rankView.translatesAutoresizingMaskIntoConstraints = false
+        return rankView
+    }()
+    
+    private let tripadvisorReviewNumbersLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 12)
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 1
+        return label
     }()
     
     private var restaurant: RestaurantDTO?
@@ -94,7 +120,10 @@ final class RestaurantCell: UICollectionViewCell {
         self.addSubview(restaurantImageView)
         self.addSubview(theForkRatingImageView)
         self.addSubview(theForkRatingLabel)
+        self.addSubview(theForkReviewNumbersLabel)
         self.addSubview(restaurantAddressLabel)
+        self.addSubview(tripadvisorRankView)
+        self.addSubview(tripadvisorReviewNumbersLabel)
         
         // Constraint restaurant Image
         restaurantImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
@@ -118,17 +147,29 @@ final class RestaurantCell: UICollectionViewCell {
         // Constraint the fork rating
         theForkRatingImageView.leadingAnchor.constraint(equalTo: restaurantImageView.trailingAnchor, constant: 20).isActive = true
         theForkRatingImageView.topAnchor.constraint(equalTo: restaurantNameLabel.bottomAnchor, constant: 5).isActive = true
-        theForkRatingImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        theForkRatingImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        theForkRatingImageView.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        theForkRatingImageView.widthAnchor.constraint(equalToConstant: 15).isActive = true
         
         theForkRatingLabel.leadingAnchor.constraint(equalTo: theForkRatingImageView.trailingAnchor, constant: 5).isActive = true
-        theForkRatingLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         theForkRatingLabel.centerYAnchor.constraint(equalTo: theForkRatingImageView.centerYAnchor).isActive = true
+        
+        theForkReviewNumbersLabel.centerYAnchor.constraint(equalTo: theForkRatingLabel.centerYAnchor).isActive = true
+        theForkReviewNumbersLabel.leadingAnchor.constraint(equalTo: theForkRatingLabel.trailingAnchor, constant: 5).isActive = true
+        theForkReviewNumbersLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
+        
+        // Constraint tripadvisor rating
+        tripadvisorRankView.leadingAnchor.constraint(equalTo: restaurantImageView.trailingAnchor, constant: 20).isActive = true
+        tripadvisorRankView.topAnchor.constraint(equalTo: theForkRatingImageView.bottomAnchor, constant: 10).isActive = true
+        
+        // Constraint tripadvisor review
+        tripadvisorReviewNumbersLabel.centerYAnchor.constraint(equalTo: tripadvisorRankView.centerYAnchor).isActive = true
+        tripadvisorReviewNumbersLabel.leadingAnchor.constraint(equalTo: tripadvisorRankView.trailingAnchor, constant: 5).isActive = true
+        tripadvisorReviewNumbersLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         
         // Constraint address label
         restaurantAddressLabel.leadingAnchor.constraint(equalTo: restaurantImageView.trailingAnchor, constant: 20).isActive = true
         restaurantAddressLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
-        restaurantAddressLabel.topAnchor.constraint(equalTo: theForkRatingImageView.bottomAnchor, constant: 10).isActive = true
+        restaurantAddressLabel.topAnchor.constraint(equalTo: tripadvisorRankView.bottomAnchor, constant: 10).isActive = true
         restaurantAddressLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15).isActive = true
     }
     
@@ -145,8 +186,11 @@ final class RestaurantCell: UICollectionViewCell {
 
         restaurantNameLabel.text = restaurant.name
         restaurantImageView.downloadImage(from: restaurant.mainImageUrl.orEmpty)
-        theForkRatingLabel.text = restaurant.theForkRating
+        theForkRatingLabel.text = "\(restaurant.theForkRating)"
         restaurantAddressLabel.text = restaurant.address
         favoriteImageView.image = restaurant.isFavorite ? #imageLiteral(resourceName: "filled-heart") : #imageLiteral(resourceName: "empty-heart")
+        tripadvisorRankView.setRankValue(value: restaurant.tripadvisorRating)
+        tripadvisorReviewNumbersLabel.text = "\(restaurant.tripadvisorReviewNumbers) reviews"
+        theForkReviewNumbersLabel.text = "\(restaurant.theForkReviewNumbers) reviews"
     }
 }
