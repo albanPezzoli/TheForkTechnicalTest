@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9253D23227189E5200391EC3 /* UserDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D23127189E5200391EC3 /* UserDefaultValues.swift */; };
 		92785954271617370017BD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785953271617370017BD5C /* AppDelegate.swift */; };
 		92785958271617370017BD5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785957271617370017BD5C /* ListViewController.swift */; };
 		9278595D2716173F0017BD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9278595C2716173F0017BD5C /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9253D23127189E5200391EC3 /* UserDefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValues.swift; sourceTree = "<group>"; };
 		92785950271617370017BD5C /* TheForkTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheForkTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92785953271617370017BD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92785957271617370017BD5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				927859D6271620540017BD5C /* Environment.swift */,
 				92785A04271768330017BD5C /* ImageLoader.swift */,
+				9253D23127189E5200391EC3 /* UserDefaultValues.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				92785A00271748C80017BD5C /* UIViewControllerExtension.swift in Sources */,
 				92785A0F271768C80017BD5C /* OptionalExtension.swift in Sources */,
 				92785A0A271768740017BD5C /* UIImageViewExtension.swift in Sources */,
+				9253D23227189E5200391EC3 /* UserDefaultValues.swift in Sources */,
 				9278599F271619990017BD5C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
