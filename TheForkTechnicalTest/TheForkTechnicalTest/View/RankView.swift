@@ -13,6 +13,7 @@ final class RankView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "ta-bubbles-empty")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -20,6 +21,7 @@ final class RankView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "ta-bubbles-empty")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -27,6 +29,7 @@ final class RankView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "ta-bubbles-empty")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -34,6 +37,7 @@ final class RankView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "ta-bubbles-empty")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
 
@@ -41,6 +45,7 @@ final class RankView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "ta-bubbles-empty")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     

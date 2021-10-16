@@ -24,6 +24,7 @@ final class RestaurantCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 10
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -31,7 +32,7 @@ final class RestaurantCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = #imageLiteral(resourceName: "tf-logo")
-        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -70,6 +71,15 @@ final class RestaurantCell: UICollectionViewCell {
         imageView.image = #imageLiteral(resourceName: "empty-heart")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let tripadvisorRatingImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = #imageLiteral(resourceName: "ta-logo")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -125,6 +135,7 @@ final class RestaurantCell: UICollectionViewCell {
         self.addSubview(theForkRatingLabel)
         self.addSubview(theForkReviewNumbersLabel)
         self.addSubview(restaurantAddressLabel)
+        self.addSubview(tripadvisorRatingImageView)
         self.addSubview(tripadvisorRankView)
         self.addSubview(tripadvisorReviewNumbersLabel)
         
@@ -161,9 +172,15 @@ final class RestaurantCell: UICollectionViewCell {
         theForkReviewNumbersLabel.leadingAnchor.constraint(equalTo: theForkRatingLabel.trailingAnchor, constant: 5).isActive = true
         theForkReviewNumbersLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15).isActive = true
         
+        // Constraint the tripadvisor rating
+        tripadvisorRatingImageView.leadingAnchor.constraint(equalTo: restaurantImageView.trailingAnchor, constant: 20).isActive = true
+        tripadvisorRatingImageView.topAnchor.constraint(equalTo: theForkRatingImageView.bottomAnchor, constant: 5).isActive = true
+        tripadvisorRatingImageView.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        tripadvisorRatingImageView.widthAnchor.constraint(equalToConstant: 15).isActive = true
+        
         // Constraint tripadvisor rating
-        tripadvisorRankView.leadingAnchor.constraint(equalTo: restaurantImageView.trailingAnchor, constant: 20).isActive = true
-        tripadvisorRankView.topAnchor.constraint(equalTo: theForkRatingImageView.bottomAnchor, constant: 10).isActive = true
+        tripadvisorRankView.leadingAnchor.constraint(equalTo: tripadvisorRatingImageView.trailingAnchor, constant: 5).isActive = true
+        tripadvisorRankView.centerYAnchor.constraint(equalTo: tripadvisorRatingImageView.centerYAnchor).isActive = true
         
         // Constraint tripadvisor review
         tripadvisorReviewNumbersLabel.centerYAnchor.constraint(equalTo: tripadvisorRankView.centerYAnchor).isActive = true
