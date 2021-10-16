@@ -46,7 +46,7 @@ final class ListViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "ListViewControllerTitle".localized
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .lightBackground | .darkBackground
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "sortActionButton".localized,
                                                             style: .plain,

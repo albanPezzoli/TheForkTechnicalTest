@@ -38,7 +38,7 @@ final class RestaurantCell: UICollectionViewCell {
     
     private let theForkRatingLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .green
+        label.textColor = .theForkColor
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false

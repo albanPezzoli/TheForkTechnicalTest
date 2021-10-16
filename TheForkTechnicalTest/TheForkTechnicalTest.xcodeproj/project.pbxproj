@@ -20,6 +20,7 @@
 		9253D264271ADECA00391EC3 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859E52717378C0017BD5C /* RestaurantsViewModel.swift */; };
 		9253D268271ADEDE00391EC3 /* RestaurantServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859F527173EDC0017BD5C /* RestaurantServiceDelegate.swift */; };
 		9253D26D271AFDD900391EC3 /* RestaurantServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D26C271AFDD900391EC3 /* RestaurantServiceMock.swift */; };
+		9253D275271B1FB900391EC3 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D274271B1FB900391EC3 /* UIColorExtension.swift */; };
 		92785954271617370017BD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785953271617370017BD5C /* AppDelegate.swift */; };
 		92785958271617370017BD5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785957271617370017BD5C /* ListViewController.swift */; };
 		9278595D2716173F0017BD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9278595C2716173F0017BD5C /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		9253D243271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModelProtocol.swift; sourceTree = "<group>"; };
 		9253D24B271AC26600391EC3 /* MockedRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRestaurant.swift; sourceTree = "<group>"; };
 		9253D26C271AFDD900391EC3 /* RestaurantServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantServiceMock.swift; sourceTree = "<group>"; };
+		9253D274271B1FB900391EC3 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		92785950271617370017BD5C /* TheForkTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheForkTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92785953271617370017BD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92785957271617370017BD5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				927859FF271748C80017BD5C /* UIViewControllerExtension.swift */,
 				92785A09271768740017BD5C /* UIImageViewExtension.swift */,
 				92785A0E271768C80017BD5C /* OptionalExtension.swift */,
+				9253D274271B1FB900391EC3 /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				927859A4271619DC0017BD5C /* StringExtension.swift in Sources */,
 				92785A05271768330017BD5C /* ImageLoader.swift in Sources */,
 				92785958271617370017BD5C /* ListViewController.swift in Sources */,
+				9253D275271B1FB900391EC3 /* UIColorExtension.swift in Sources */,
 				927859D227161BE20017BD5C /* Restaurant.swift in Sources */,
 				927859FB271740D40017BD5C /* ThreadExtension.swift in Sources */,
 				927859D7271620540017BD5C /* Environment.swift in Sources */,
