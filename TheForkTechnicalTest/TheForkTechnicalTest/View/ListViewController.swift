@@ -126,6 +126,12 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let restauranCell = cell as? RestaurantCell {
+            restauranCell.cancelImageRequestIfNeeded()
+        }
+    }
 }
 
 // MARK: RestaurantServiceDelegate

@@ -39,7 +39,7 @@ final class RestaurantsViewModel: RestaurantViewModelProtocol {
         delegate?.retrieveRestaurantDidSuccess(restaurants: sortedArray)
     }
     
-    /// Sort restaurant by using only the theFork rating
+    /// Sort restaurant by using only The Fork rating
     /// We could optimize this sort by balancing each rating (TheFork and Tripadvisor) with their reviews numbers
     func sortRestaurantByRank() {
         let sortedArray = restaurant.sorted { lhs, rhs -> Bool in

@@ -207,6 +207,10 @@ final class RestaurantCell: UICollectionViewCell {
         theForkReviewNumbersLabel.text = "\(restaurant.theForkReviewNumbers) reviews"
     }
     
+    public func cancelImageRequestIfNeeded() {
+        restaurantImageView.cancelDataTask(for: (self.restaurant?.mainImageUrl).orEmpty)
+    }
+    
     /* Actions */
     @objc private func handleFavorite() {
         if let restaurant = restaurant {

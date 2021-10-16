@@ -30,13 +30,13 @@ final class BaseRequest {
         task.resume()
     }
     
-    static func downloadImage(from urlString: String, completionHandler: @escaping (Result<UIImage, Error>) -> Void) {
+    static func downloadImage(from urlString: String, completionHandler: @escaping (Result<UIImage, Error>) -> Void) -> URLSessionDataTask? {
         guard let url = URL(string: urlString) else {
             let error = NSError(domain: "errorFormatedURL".localized, code: 500, userInfo: nil)
             completionHandler(.failure(error))
-            return
+            return nil
         }
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                   let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                   let data = data, error == nil,
@@ -46,6 +46,9 @@ final class BaseRequest {
                 return
             }
             completionHandler(.success(image))
-        }.resume()
+        }
+        dataTask.resume()
+        
+        return dataTask
     }
 }

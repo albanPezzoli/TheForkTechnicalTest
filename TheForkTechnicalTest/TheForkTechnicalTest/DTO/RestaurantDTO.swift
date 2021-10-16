@@ -20,7 +20,7 @@ struct RestaurantDTO {
     
     init(restaurant: Restaurant) {
         identifier = restaurant.uuid
-        mainImageUrl = restaurant.mainPhoto?.source
+        mainImageUrl = restaurant.mainPhoto?.w184h184
 
         theForkRating = restaurant.aggregateRatings.thefork.ratingValue
         theForkReviewNumbers = restaurant.aggregateRatings.thefork.reviewCount
