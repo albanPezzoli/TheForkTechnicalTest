@@ -17,19 +17,18 @@ final class RestaurantsViewModel: RestaurantViewModelProtocol {
     
     init(restaurantListService: RestaurantServiceProtocol) {
         self.restaurantListService = restaurantListService
-        self.restaurantListService.retriveListRestaurant{[weak self] result in
-            self?.restaurantResult = result
-        }
     }
 
     func retrieveRestaurant() {
-        guard let restaurantResult = restaurantResult else { return }
-        switch restaurantResult {
-        case .success(let response):
-            self.restaurant = response.data.map { RestaurantDTO(restaurant: $0)}
-            delegate?.retrieveRestaurantDidSuccess(restaurants: self.restaurant)
-        case .failure(let error):
-            delegate?.retrieveRestaurantDidFailed(error: error)
+        self.restaurantListService.retriveListRestaurant{[weak self] result in
+            switch result {
+            case .success(let response):
+                let restaurantDTO = response.data.map { RestaurantDTO(restaurant: $0)}
+                self?.restaurant = restaurantDTO
+                self?.delegate?.retrieveRestaurantDidSuccess(restaurants: restaurantDTO)
+            case .failure(let error):
+                self?.delegate?.retrieveRestaurantDidFailed(error: error)
+            }
         }
     }
     
