@@ -22,7 +22,7 @@ class TheForkTechnicalTestTests: XCTestCase {
         RestaurantServiceMock().retriveListRestaurant { result in
             switch result {
             case .success:
-                XCTAssertTrue(true)
+                XCTAssert(true)
             case .failure:
                 XCTFail()
             }
@@ -88,7 +88,7 @@ class TheForkTechnicalTestTests: XCTestCase {
 
 extension TheForkTechnicalTestTests: RestaurantServiceDelegate {
     func retrieveRestaurantDidSuccess(restaurants: [RestaurantDTO]) {
-        XCTAssertTrue(true)
+        XCTAssert(true)
     }
     
     func retrieveRestaurantDidFailed(error: Error) {
