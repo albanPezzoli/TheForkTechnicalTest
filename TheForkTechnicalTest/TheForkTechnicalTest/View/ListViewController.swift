@@ -25,13 +25,13 @@ final class ListViewController: UIViewController {
     
     // MARK: Variables
     private var restaurants: [RestaurantDTO] = []
-    private var restaurantsViewModel: RestaurantsViewModel!
+    private var restaurantsViewModel: RestaurantViewModelProtocol!
     weak var coordinator: MainCoordinator?
     
     private static let restaurantCellID = "RestaurantCellID"
     
     // MARK: Functions
-    init(restaurantsViewModel: RestaurantsViewModel) {
+    init(restaurantsViewModel: RestaurantViewModelProtocol) {
         self.restaurantsViewModel = restaurantsViewModel
 
         super.init(nibName: nil, bundle: nil)
@@ -56,7 +56,7 @@ final class ListViewController: UIViewController {
         setupActivityIndicator()
         setupCollectionView()
         
-        restaurantsViewModel.delegate = self
+        (restaurantsViewModel as?  RestaurantsViewModel)?.delegate = self
 
         restaurantsViewModel!.retrieveRestaurant()
     }

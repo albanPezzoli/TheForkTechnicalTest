@@ -10,7 +10,7 @@ import UIKit
 class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
     
-    private let restaurantsViewModel = RestaurantsViewModel()
+    private let restaurantsViewModel = RestaurantsViewModel(restaurantListService: RestaurantListService())
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

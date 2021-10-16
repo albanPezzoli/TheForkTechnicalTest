@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class RestaurantListService {
+final class RestaurantListService: RestaurantServiceProtocol {
     
     private static let urlRestaurantList = "test.json"
 

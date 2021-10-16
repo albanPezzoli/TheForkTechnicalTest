@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		9253D23227189E5200391EC3 /* UserDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D23127189E5200391EC3 /* UserDefaultValues.swift */; };
 		9253D23A2718BBB600391EC3 /* RankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D2392718BBB600391EC3 /* RankView.swift */; };
+		9253D23F271ABF9C00391EC3 /* RestaurantServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D23E271ABF9C00391EC3 /* RestaurantServiceProtocol.swift */; };
+		9253D244271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D243271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift */; };
+		9253D24C271AC26600391EC3 /* MockedRestaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D24B271AC26600391EC3 /* MockedRestaurant.swift */; };
+		9253D250271AC47E00391EC3 /* RestaurantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785A132717852D0017BD5C /* RestaurantDTO.swift */; };
+		9253D254271ACA0900391EC3 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927859D127161BE20017BD5C /* Restaurant.swift */; };
+		9253D258271ACB1300391EC3 /* UserDefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D23127189E5200391EC3 /* UserDefaultValues.swift */; };
+		9253D25C271ACBDE00391EC3 /* RestaurantServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D23E271ABF9C00391EC3 /* RestaurantServiceProtocol.swift */; };
+		9253D260271ACBE100391EC3 /* RestaurantViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9253D243271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift */; };
 		92785954271617370017BD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785953271617370017BD5C /* AppDelegate.swift */; };
 		92785958271617370017BD5C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92785957271617370017BD5C /* ListViewController.swift */; };
 		9278595D2716173F0017BD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9278595C2716173F0017BD5C /* Assets.xcassets */; };
@@ -54,6 +62,9 @@
 /* Begin PBXFileReference section */
 		9253D23127189E5200391EC3 /* UserDefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultValues.swift; sourceTree = "<group>"; };
 		9253D2392718BBB600391EC3 /* RankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankView.swift; sourceTree = "<group>"; };
+		9253D23E271ABF9C00391EC3 /* RestaurantServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantServiceProtocol.swift; sourceTree = "<group>"; };
+		9253D243271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModelProtocol.swift; sourceTree = "<group>"; };
+		9253D24B271AC26600391EC3 /* MockedRestaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedRestaurant.swift; sourceTree = "<group>"; };
 		92785950271617370017BD5C /* TheForkTechnicalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheForkTechnicalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92785953271617370017BD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92785957271617370017BD5C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +167,7 @@
 			children = (
 				9278596A2716173F0017BD5C /* TheForkTechnicalTestTests.swift */,
 				9278596C2716173F0017BD5C /* Info.plist */,
+				9253D24B271AC26600391EC3 /* MockedRestaurant.swift */,
 			);
 			path = TheForkTechnicalTestTests;
 			sourceTree = "<group>";
@@ -237,6 +249,8 @@
 			children = (
 				927859DB2717374A0017BD5C /* Coordinator.swift */,
 				927859F527173EDC0017BD5C /* RestaurantServiceDelegate.swift */,
+				9253D23E271ABF9C00391EC3 /* RestaurantServiceProtocol.swift */,
+				9253D243271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -396,10 +410,12 @@
 				92785A142717852D0017BD5C /* RestaurantDTO.swift in Sources */,
 				927859E1271737530017BD5C /* MainCoordinator.swift in Sources */,
 				92785A00271748C80017BD5C /* UIViewControllerExtension.swift in Sources */,
+				9253D244271AC0ED00391EC3 /* RestaurantViewModelProtocol.swift in Sources */,
 				92785A0F271768C80017BD5C /* OptionalExtension.swift in Sources */,
 				9253D23A2718BBB600391EC3 /* RankView.swift in Sources */,
 				92785A0A271768740017BD5C /* UIImageViewExtension.swift in Sources */,
 				9253D23227189E5200391EC3 /* UserDefaultValues.swift in Sources */,
+				9253D23F271ABF9C00391EC3 /* RestaurantServiceProtocol.swift in Sources */,
 				9278599F271619990017BD5C /* BaseRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,7 +424,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9253D254271ACA0900391EC3 /* Restaurant.swift in Sources */,
+				9253D250271AC47E00391EC3 /* RestaurantDTO.swift in Sources */,
 				9278596B2716173F0017BD5C /* TheForkTechnicalTestTests.swift in Sources */,
+				9253D260271ACBE100391EC3 /* RestaurantViewModelProtocol.swift in Sources */,
+				9253D258271ACB1300391EC3 /* UserDefaultValues.swift in Sources */,
+				9253D25C271ACBDE00391EC3 /* RestaurantServiceProtocol.swift in Sources */,
+				9253D24C271AC26600391EC3 /* MockedRestaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,7 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2G7683R3B9;
 				INFOPLIST_FILE = TheForkTechnicalTestTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -637,7 +659,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2G7683R3B9;
 				INFOPLIST_FILE = TheForkTechnicalTestTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

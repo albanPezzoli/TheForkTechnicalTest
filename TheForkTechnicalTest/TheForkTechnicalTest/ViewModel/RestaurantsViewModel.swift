@@ -7,15 +7,15 @@
 
 import Foundation
 
-final class RestaurantsViewModel {
+final class RestaurantsViewModel: RestaurantViewModelProtocol {
     // Instanciate in the init, can be force unwrapped
-    private let restaurantListService: RestaurantListService!
+    private let restaurantListService: RestaurantServiceProtocol!
     private var restaurantResult: Result<ListRestaurant, Error>?
     private var restaurant: [RestaurantDTO] = []
     
     weak var delegate: RestaurantServiceDelegate?
     
-    init(restaurantListService: RestaurantListService = RestaurantListService()) {
+    init(restaurantListService: RestaurantServiceProtocol) {
         self.restaurantListService = restaurantListService
         self.restaurantListService.retriveListRestaurant{[weak self] result in
             self?.restaurantResult = result
