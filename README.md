@@ -13,8 +13,10 @@ But, careful, it's not perfect and it's possible you can find some ameliorations
 
 First of all, a little demo of my technical test :
 
+![demoPortraitLight](https://user-images.githubusercontent.com/37963976/137629425-0529ef08-552b-4580-bb18-f912f8909df8.gif)
 
-  
+![demoLandscapeDark](https://user-images.githubusercontent.com/37963976/137629422-d1ba910d-e2c7-44d6-b73d-19462838ad83.gif)
+
 ## Key concepts untidily
 - MVVC-C architecture
 - Used Delegate, Singleton patterns
