@@ -11,8 +11,10 @@ final class ListViewController: UIViewController {
     // MARK: UIComponents
     private let collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        let cellWidth = UIApplication.shared.statusBarOrientation.isLandscape ?
+            UIScreen.main.bounds.height : UIScreen.main.bounds.width
         layout.sectionInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 30, height: 150)
+        layout.itemSize = CGSize(width: cellWidth - 30, height: 150)
         layout.scrollDirection = .vertical
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
