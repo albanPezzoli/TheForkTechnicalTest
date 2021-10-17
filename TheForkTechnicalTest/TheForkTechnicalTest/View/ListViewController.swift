@@ -25,7 +25,7 @@ final class ListViewController: UIViewController {
     
     // MARK: Variables
     private var restaurants: [RestaurantDTO] = []
-    private var restaurantsViewModel: RestaurantViewModelProtocol!
+    private var restaurantsViewModel: RestaurantViewModelProtocol
     weak var coordinator: MainCoordinator?
     
     private static let restaurantCellID = "RestaurantCellID"
@@ -58,7 +58,7 @@ final class ListViewController: UIViewController {
         
         (restaurantsViewModel as?  RestaurantsViewModel)?.delegate = self
 
-        restaurantsViewModel!.retrieveRestaurant()
+        restaurantsViewModel.retrieveRestaurant()
     }
     
     private func setupActivityIndicator() {
@@ -100,11 +100,11 @@ final class ListViewController: UIViewController {
         let alert = UIAlertController(title:nil , message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "sortByRankOption".localized, style: .default , handler:{ (UIAlertAction)in
-            self.restaurantsViewModel!.sortRestaurantByRank()
+            self.restaurantsViewModel.sortRestaurantByRank()
         }))
         
         alert.addAction(UIAlertAction(title: "sortByNameOption".localized, style: .default , handler:{ (UIAlertAction)in
-            self.restaurantsViewModel!.sortRestaurantByName()
+            self.restaurantsViewModel.sortRestaurantByName()
         }))
         
         alert.addAction(UIAlertAction(title: "dismissOption".localized, style: .cancel, handler: nil))

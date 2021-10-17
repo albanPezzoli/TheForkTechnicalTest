@@ -201,7 +201,7 @@ final class RestaurantCell: UICollectionViewCell {
         restaurantImageView.downloadImage(from: restaurant.mainImageUrl.orEmpty)
         theForkRatingLabel.text = "\(restaurant.theForkRating)"
         restaurantAddressLabel.text = restaurant.address
-        favoriteImageView.image = restaurant.isFavorite ? #imageLiteral(resourceName: "filled-heart") : #imageLiteral(resourceName: "empty-heart")
+        favoriteImageView.image = UserDefaultValues.favoriteKeys.contains(restaurant.identifier) ? #imageLiteral(resourceName: "filled-heart") : #imageLiteral(resourceName: "empty-heart")
         tripadvisorRankView.setRankValue(value: restaurant.tripadvisorRating)
         tripadvisorReviewNumbersLabel.text = "\(restaurant.tripadvisorReviewNumbers) reviews"
         theForkReviewNumbersLabel.text = "\(restaurant.theForkReviewNumbers) reviews"
@@ -214,9 +214,13 @@ final class RestaurantCell: UICollectionViewCell {
     /* Actions */
     @objc private func handleFavorite() {
         if let restaurant = restaurant {
-            // Swap images
-            favoriteImageView.image = restaurant.isFavorite ? #imageLiteral(resourceName: "empty-heart") : #imageLiteral(resourceName: "filled-heart")
-            self.restaurant?.updateFavorite()
+            if UserDefaultValues.favoriteKeys.contains(restaurant.identifier) {
+                UserDefaultValues.favoriteKeys.removeAll(where: {$0 == restaurant.identifier})
+                favoriteImageView.image = #imageLiteral(resourceName: "empty-heart")
+            } else {
+                UserDefaultValues.favoriteKeys.append(restaurant.identifier)
+                favoriteImageView.image = #imageLiteral(resourceName: "filled-heart")
+            }
         }
     }
 }
